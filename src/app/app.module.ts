@@ -9,15 +9,20 @@ import { environment } from './../environments/environment';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 // angular google maps
 import { AgmCoreModule } from '@agm/core';
+// angular firebase, angular firestore
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
 
 import { AppComponent } from './app.component';
 import { MapPlacesComponent } from './map-places/map-places.component';
+import { PlacesComponent } from './places/places.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapPlacesComponent
+    MapPlacesComponent,
+    PlacesComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,9 @@ import { MapPlacesComponent } from './map-places/map-places.component';
     MatCheckboxModule,
     AgmCoreModule.forRoot({
       apiKey: environment.googleMaps.apiKey
-    })
+    }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

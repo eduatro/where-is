@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let place of places | async">
+    Title: {{ place.title }} <br>
+    Coordinates: {{ place.coordinates.latitude }}, {{ place.coordinates.longitude }}
+  </li>
+</ul>
