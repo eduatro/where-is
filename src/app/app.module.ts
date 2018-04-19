@@ -17,6 +17,8 @@ import { AppComponent } from './app.component';
 import { MapPlacesComponent } from './map-places/map-places.component';
 import { PlacesComponent } from './places/places.component';
 
+// routing
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { PlacesComponent } from './places/places.component';
       apiKey: environment.googleMaps.apiKey
     }),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
